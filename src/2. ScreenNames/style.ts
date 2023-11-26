@@ -3,14 +3,13 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#000",
+        backgroundColor: "#0B0B0B",
         alignItems: "flex-start",
         justifyContent: "space-between",
         paddingTop: 20,
         paddingBottom: 20,
         paddingLeft: 30,
         paddingRight: 30,
-        borderColor: "#B31312",
         gap: 10,
     },
     ItemGlobal: {
@@ -62,13 +61,5 @@ export const styles = StyleSheet.create({
         marginBottom: 10,
         color: "#fff",
         fontWeight: "700",
-    },
-    buttonDeleteAll: {
-        backgroundColor: "#B31319",
-        borderRadius: 6,
-        justifyContent: "center",
-        width: "100%",
-        height: 55,
-        marginTop: 10,
     },
 });

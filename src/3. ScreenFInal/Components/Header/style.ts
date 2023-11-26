@@ -11,9 +11,9 @@ export const styles = StyleSheet.create({
     },
     icon: {
         width: 40,
+        backgroundColor: "#2a2a2a",
         height: 35,
         borderRadius: 6,
-        backgroundColor: "#000",
         justifyContent: "center",
         alignItems: "center",
     },

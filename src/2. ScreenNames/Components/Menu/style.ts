@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
     itemColumn: {
         flexDirection: "column",
-        backgroundColor: "#000",
+        backgroundColor: "#0B0B0B",
     },
     text1: {
         fontSize: 18,

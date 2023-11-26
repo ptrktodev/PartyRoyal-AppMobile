@@ -5,10 +5,7 @@ export const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "#000",
-    },
-    text: {
-        color: "#fff",
+        backgroundColor: "#0B0B0B",
     },
     button: {
         backgroundColor: "#0f65fa",
@@ -19,7 +16,9 @@ export const styles = StyleSheet.create({
         marginTop: 10,
     },
     buttonText: {
+        fontSize: 14,
         textAlign: "center",
         color: "#fff",
+        fontFamily: "IBMPlexSans_500Medium",
     },
 });

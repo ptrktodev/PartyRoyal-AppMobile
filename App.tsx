@@ -1,13 +1,14 @@
 import { StatusBar } from "react-native";
-import Names from "./src/Home/ScreenNames/index";
-import Initial from "./src/Home/ScreenInitial/index";
+import Names from "./src/2. ScreenNames/index";
+import Initial from "./src/1. ScreenInitial/index";
+import Final from "./src/3. ScreenFInal/index";
 import {
     useFonts,
     IBMPlexSans_400Regular,
     IBMPlexSans_700Bold,
     IBMPlexSans_500Medium,
 } from "@expo-google-fonts/ibm-plex-sans";
-import LoadScreen from "./src/Components/Load/index";
+import LoadScreen from "./src/2. ScreenNames/Components/Load/index";
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -21,14 +22,26 @@ export default function App() {
         IBMPlexSans_500Medium,
     });
 
+    const forFade = ({ current }) => ({
+        cardStyle: {
+            opacity: current.progress,
+        },
+    });
+
     return (
         <NavigationContainer>
-            <StatusBar backgroundColor="#0f65fa" barStyle="light-content" />
-
+            <StatusBar backgroundColor="#000" barStyle="light-content" />
             {FontsLoad ? (
-                <Stack.Navigator initialRouteName="Names">
-                    <Stack.Screen name="Names" component={Names} />
+                <Stack.Navigator
+                    initialRouteName="Initial"
+                    screenOptions={{
+                        headerShown: false,
+                        cardStyleInterpolator: forFade,
+                    }}
+                >
                     <Stack.Screen name="Initial" component={Initial} />
+                    <Stack.Screen name="Names" component={Names} />
+                    <Stack.Screen name="Final" component={Final} />
                 </Stack.Navigator>
             ) : (
                 <LoadScreen />

@@ -9,9 +9,13 @@ import {
     ScrollView,
 } from "react-native";
 import { styles } from "./style";
-import Participant from "../../Components/NamesList/index";
-import Header from "../../Components/Header/header";
-import Menu from "../../Components/Menu/menu";
+// Components:
+import Participant from "./Components/List/index";
+import Header from "./Components/Header/header";
+import Menu from "./Components/Menu/menu";
+import ButtonDeleteAll from "./Components/ButtonDeleteAll/index";
+import ButtonNext from "./Components/ButtonNext/index";
+// SVG:
 import IconGit from "./img/github.svg";
 
 export default function Names({ navigation }) {
@@ -40,12 +44,8 @@ export default function Names({ navigation }) {
         Linking.openURL("https://github.com/ptrktodev");
     }
 
-    function deleteAll() {
-        setValueProp([]);
-    }
-
     return (
-        <ScrollView style={{ backgroundColor: "black" }}>
+        <ScrollView style={{ backgroundColor: "#0B0B0B" }}>
             <View style={styles.container}>
                 <Header navigation={navigation} />
                 <Menu />
@@ -54,7 +54,7 @@ export default function Names({ navigation }) {
                         <TextInput
                             style={styles.input}
                             value={value}
-                            placeholder="Digite seu nome:"
+                            placeholder="Digite três nomes:"
                             placeholderTextColor="#6f6f6f"
                             onChangeText={(text) => setValue(text)}
                         ></TextInput>
@@ -80,12 +80,10 @@ export default function Names({ navigation }) {
                         : null}
                 </View>
                 {valueProp.length > 1 ? (
-                    <TouchableOpacity
-                        style={styles.buttonDeleteAll}
-                        onPress={deleteAll}
-                    >
-                        <Text style={styles.buttonText}>Remove All</Text>
-                    </TouchableOpacity>
+                    <ButtonDeleteAll setValueProp={setValueProp} />
+                ) : null}
+                {valueProp.length > 2 ? (
+                    <ButtonNext navigation={navigation} valueProp={valueProp} />
                 ) : null}
                 <TouchableOpacity onPress={goGit} style={styles.div_ptrk}>
                     <IconGit fill={"white"} height={25} width={18} />
