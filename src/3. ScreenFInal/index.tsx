@@ -1,13 +1,5 @@
 import React from "react";
-import {
-    Text,
-    View,
-    TextInput,
-    TouchableOpacity,
-    Keyboard,
-    Linking,
-    ScrollView,
-} from "react-native";
+import { View, ScrollView } from "react-native";
 import { styles } from "./style";
 import Header from "./Components/Header/header";
 import Main from "./Components/Menu/index";
